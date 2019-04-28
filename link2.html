@@ -1,0 +1,44 @@
+<html>
+<h1> The Url is </h1>
+<body background = "http://172.29.132.24:9090/back3.jpg">
+<style>
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid black;
+    padding: 4px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background-color: #E6E6FA;
+    color: black;
+}
+</style>
+
+<table id = "customers">
+	<tr>
+		<th>image</th>
+		<th>URL</th>
+		<th>Time to wait</th>
+	</tr>
+{% for key,value in temp.items() %}
+	<tr>
+		<td> <img src = "{{ key }}" style="width:150px;height:150px;" > </td>
+		<td> <p><a href= "{{ key }}">{{ key }}</a></p> </td>
+		<td> <p> {{ value }} minutes </p> </td>
+	</tr>
+{% endfor %}
+</table>
+</body>
+</html>
+

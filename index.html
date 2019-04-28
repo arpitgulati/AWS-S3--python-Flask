@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<title>Upload File</title>
+<body background = "http://172.29.132.24:9090/back3.jpg">
+
+<center>
+</br>
+<h1>Plain Upload</h1>
+<form name="form1" method="POST" enctype="multipart/form-data">
+
+     {{ form1.hidden_tag() }}
+     {{ form1.photo1(multiple="multiple") }}
+     {% for error in form1.photo1.errors %}
+         <span style="color: red;">{{ error }}</span>
+     {% endfor %}
+     {{ form1.submit1 }}
+</form>
+</br>
+<h1>Validate and Plain Upload</h1>
+<form name="form2" method="POST" enctype="multipart/form-data">     
+     {{ form2.hidden_tag() }}
+     {{ form2.photo2(multiple="multiple") }}
+     {% for error in form2.photo2.errors %}
+         <span style="color: red;">{{ error }}</span>
+     {% endfor %}
+     {{ form2.submit2 }}
+</form>
+</center>
+<br>
+
+<a href="{{ file_url }}">
+</body>
+</html>
